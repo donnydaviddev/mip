@@ -17,10 +17,9 @@ exists, it was intentionally wiped.
 **Phase 0 (environment): complete, freshly verified.**
 - Next.js 16 (App Router), TypeScript, Tailwind CSS v4, ESLint — `pnpm lint`
   and `pnpm build` both pass
-- shadcn/ui initialized with the Nova preset, on **Base UI** as the
-  underlying primitive library (Base UI became shadcn's default in July
-  2026 — if this was a deliberate choice, good; if you expected Radix, worth
-  double-checking which you actually want before building on top of it)
+- shadcn/ui initialized with the Nova preset, on **Radix UI** — switched from
+  the Base UI default deliberately, since Tony(Builder)'s model has far more
+  training exposure to Radix. Switch confirmed and build-verified.
 - Docker Desktop + PostgreSQL 17 running via Docker Compose, confirmed
   healthy via `docker compose ps` and a direct `psql` connection — zero
   tables, which is expected
@@ -62,15 +61,43 @@ don't leave it half-filled.*
 
 ---
 
-## If Tony(Builder) Gets Stuck
+## How Tony(Builder) Reports Back
 
-1. He tries one initial fix, or narrows the task to something he can finish.
-2. Still broken → he reports the *actual* error output to you.
-3. You relay it to Tony(Planner), who rewrites the task above with better scope.
-4. Still broken after that → escalate to L with the real output.
-5. L hands back a "Summary for Tony(Builder)" — paste it straight into Cline.
-6. **Whatever L or Tony(Planner) changed that Tony(Builder) didn't make
-   himself — state it explicitly in your next message to him.** He has no
-   memory of edits he didn't personally make.
+Every task ends with one of three statuses — full format in
+`.clinerules/reporting-format.md`, this is the short version:
+
+- **COMPLETED** — a short report by default ("changed X, verified with Y,
+  output: Z"). Tony(Planner) incorporates what actually happened before
+  writing the next task — not just clearing a checkbox.
+- **BLOCKED / FAILED**:
+  1. Tony(Builder) tries one initial fix, or narrows the task to something
+     he can finish.
+  2. Still broken → he reports the *actual* error output to you.
+  3. You relay it to Tony(Planner), who re-scopes the task above — smaller,
+     clearer — preserving the original objective unless he explicitly
+     decides the objective itself needs to change.
+  4. Still broken after that → escalate to L with the real output.
+  5. L hands back a "Summary for Tony(Builder)" — paste it straight into Cline.
+  6. **Whatever L or Tony(Planner) changed that Tony(Builder) didn't make
+     himself — state it explicitly in your next message to him.** He has no
+     memory of edits he didn't personally make.
+
+**DISCOVERY isn't a fourth status** — it's an optional addendum Tony(Builder)
+can add to a COMPLETED, BLOCKED, or FAILED report when something's worth
+flagging. See the log below.
 
 Full reasoning behind this loop is in `AI-TEAM.md`.
+
+---
+
+## Discoveries Log
+
+Findings Tony(Builder) or Tony(Planner) flagged as worth keeping
+permanently, not yet promoted into `05-project-rules.md`. Tony(Planner)
+proposes an addition in its own copy-paste block when this happens — you
+review it, and once you've actually added it to the rules doc, move the
+entry from here into a `✅ Promoted` note (or just delete the line) so this
+list only ever shows what's still pending.
+
+*(Empty — nothing logged yet. Add a line here the first time it happens
+rather than waiting to remember it later.)*

@@ -49,6 +49,15 @@ for the same task. This applies *more* to a local model than it did to
 whatever ran this project before — smaller context, less headroom for
 recovering from an oversized ask.
 
+*(Later refinement, not a reversal: `05-project-rules.md` and `AI-TEAM.md`
+now frame this as "largest coherent, verifiable slice," not "smaller is
+always better." The failure documented above was tasks that were large *and*
+vague — no file boundaries, no acceptance criteria, room to guess. A large
+task that's still tightly bounded and unambiguous doesn't share that
+problem. The actual lesson was never "small" — it was "unambiguous and
+verifiable," and small just happened to be the easiest way to get there at
+the time.)*
+
 **Presenting early technical decisions as provisional, not final, made later
 corrections feel like normal iteration instead of failure.** More than one
 early decision (a framework version, a role name, a table-ownership

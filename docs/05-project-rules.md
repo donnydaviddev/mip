@@ -44,8 +44,20 @@ file:
   2. Still broken after that → straight to L, not a third local guess. See
   `AI-TEAM.md`'s Workflow section for the full loop.
 
-If a task is big enough that you can't fill in all four cleanly, it's too
-big. Shrink it before handing it over, don't hand it over and hope.
+**Size it right, not small.** The goal is the largest coherent, verifiable
+slice of real work Tony(Builder) can reliably execute in one pass — not the
+smallest possible fragment. Split a task only when keeping it together would
+genuinely risk ambiguity, hidden dependencies, or unreliable execution. If a
+task is big enough that you can't fill in all four fields *cleanly and
+unambiguously*, that's the actual signal to split it — size alone isn't.
+
+**The loop doesn't end at "done."** Tony(Builder) reports back using a fixed
+structure — COMPLETED / BLOCKED / FAILED, with an optional DISCOVERY
+addendum on any of them, never a fourth status — full format in
+`.clinerules/reporting-format.md`. Tony(Planner) treats that report as
+new ground truth, not a checkbox — incorporating what actually happened,
+including any DISCOVERY worth keeping, before defining the next task. See
+`AI-TEAM.md`'s Workflow section for the complete loop.
 
 ## 2. Verification discipline
 

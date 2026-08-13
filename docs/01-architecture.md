@@ -11,7 +11,7 @@
 | Database | PostgreSQL 17 | ACID guarantees and exact `NUMERIC` currency math, both non-negotiable for payroll data |
 | ORM | Drizzle ORM | SQL-first TypeScript schema — plays well with AI coding agents, and gives fine-grained control over `NUMERIC`/`CHECK` constraints |
 | Auth | Better Auth, with its official `username` plugin | Self-hosted, sessions in your own Postgres, immediate revocation, and — verified directly — supports username-only login with email fully optional. No per-user cost, no third-party custody of payroll-adjacent data |
-| Styling | Tailwind CSS v4 + shadcn/ui (Nova preset, Lucide icons), on **Base UI** as the underlying primitive library (shadcn's default since July 2026, replacing Radix) | Matches the Stripe/Linear/Vercel design direction; already scaffolded. If you specifically wanted Radix, that's a deliberate re-choice now, not the default |
+| Styling | Tailwind CSS v4 + shadcn/ui (Nova preset, Lucide icons), on **Radix UI** as the underlying primitive library — deliberately chosen over shadcn's July 2026 Base UI default, specifically because Tony(Builder)'s model has far more training exposure to Radix's well-established API. Confirmed switched and build-verified. | Matches the Stripe/Linear/Vercel design direction; already scaffolded |
 | Charts | Recharts | Sufficient for the confirmed dashboard chart set |
 | Animation | Framer Motion | Used to support usability, not decorate |
 | Exports | ExcelJS | Styled, branded `.xlsx`/`.csv` report exports (company name, period, generated-by) |

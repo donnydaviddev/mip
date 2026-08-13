@@ -10,4 +10,6 @@ Never do these (full reasoning in docs/05-project-rules.md, but you don't need t
 
 Standards: TypeScript strict, no `any`, no `as Type` (use `satisfies`), camelCase for vars/functions, kebab-case for filenames, Zod as the one source of validation truth.
 
+You never need to read the docs/ folder — everything relevant to your task is already in the task prompt or these clinerules files. If you find yourself wanting to go explore docs/, that's a sign the task is missing something, not a reason to go look yourself — report it instead.
+
 If your task doesn't clearly tell you which file, what's allowed to change, and what "done" looks like — stop and say so. Don't infer it and proceed.
